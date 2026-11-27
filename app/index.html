@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HomeBudget — Household Budget Planner</title>
+<meta name="description" content="HomeBudget helps your household plan spending, track every dollar, stay inside monthly budgets and reach savings goals.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#/dashboard" aria-label="HomeBudget home">
+      <span class="brand-mark" aria-hidden="true">$</span>
+      <span class="brand-name">HomeBudget</span>
+      <span class="brand-tag">household money, calmly planned</span>
+    </a>
+    <nav class="mainnav" aria-label="Main navigation">
+      <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+      <a href="#/transactions" data-nav="transactions">Transactions</a>
+      <a href="#/budgets" data-nav="budgets">Budgets</a>
+      <a href="#/reports" data-nav="reports">Reports</a>
+      <a href="#/goals" data-nav="goals">Goals</a>
+    </nav>
+    <div class="month-picker">
+      <label for="monthSelect">Month</label>
+      <select id="monthSelect" aria-label="Choose month"></select>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="view" aria-live="polite"></main>
+
+<footer class="wrap footer">
+  <p><strong>HomeBudget</strong> — a household budget planner that runs entirely in your browser.
+  Your data never leaves this device: everything is saved in your browser's local storage.</p>
+  <p class="footer-links">
+    <a href="#/dashboard">Dashboard</a> ·
+    <a href="#/transactions">Add a transaction</a> ·
+    <a href="#/budgets">Set a budget</a> ·
+    <a href="#/reports">Monthly report</a> ·
+    <a href="#/goals">Savings goals</a> ·
+    <a href="#/settings">Data &amp; settings</a>
+  </p>
+  <p class="fineprint">Demo data is included so you can explore every page right away. Use
+  <a href="#/settings">Data &amp; settings</a> to export, reset or clear it.</p>
+</footer>
+
+<script src="format.js"></script>
+<script src="data.js"></script>
+<script src="store.js"></script>
+<script src="charts.js"></script>
+<script src="views.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
