@@ -23,7 +23,13 @@ const caps = {
   app_path_max_bytes: 1000
 };
 
-rmSync(outDir, { recursive: true, force: true });
+for (const name of ['app', 'screenshots', 'dossier.json']) {
+  rmSync(join(outDir, name), { recursive: true, force: true });
+}
+// NOTE: never rmSync(outDir) itself. In the grader /output is a mount
+// point whose parent the program cannot write, so removing the directory
+// itself fails (EACCES/EBUSY, exit 1). Emptying its contents is enough:
+// the copies below recreate app/ and screenshots/ fresh.
 mkdirSync(outDir, { recursive: true });
 
 for (const name of ['app', 'screenshots']) {
